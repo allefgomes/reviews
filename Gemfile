@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   # RSpec for Rails 5+
   gem 'rspec-rails', '~> 4.0.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +47,8 @@ group :development do
 end
 
 group :test do
+  # Code coverage for Ruby with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', require: false
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
