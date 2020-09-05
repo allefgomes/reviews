@@ -23,4 +23,8 @@ RSpec.describe Product, type: :model do
       expect(duplicated_record).not_to be_valid
     end
   end
+
+  describe '#associations' do
+    it { should have_many(:opnions).class_name('Opnion') }
+  end
 end
