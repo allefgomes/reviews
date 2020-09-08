@@ -8,6 +8,11 @@ RSpec.describe Opnion, type: :model do
   describe '#validations' do
     it { expect(valid_opnion).to be_valid }
     it { expect(invalid_opnion).not_to be_valid }
+
+    it { should validate_presence_of(:timestamp) }
+    it { should validate_presence_of(:rating) }
+    it { should validate_presence_of(:review_text) }
+    it { should validate_presence_of(:product) }
   end
 
   describe '#associations' do
