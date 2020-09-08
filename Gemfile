@@ -25,9 +25,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. It allows you to create pretty URL’s and work with human-friendly strings as if they were numeric ids for ActiveRecord models.
-gem 'friendly_id', '~> 5.4.0'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -40,6 +37,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers'
+  # It is a gem for applying argon theme to your project
+  gem 'argon-theme', git: 'git@github.com:a113f/argon_rails.git'
 end
 
 group :development do
