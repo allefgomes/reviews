@@ -37,8 +37,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers'
-  # It is a gem for applying argon theme to your project
-  gem 'argon-theme', git: 'git@github.com:a113f/argon_rails.git'
 end
 
 group :development do
