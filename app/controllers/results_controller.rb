@@ -8,6 +8,8 @@ class ResultsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find_by_name!(params[:id])
+    slug_pagam = params[:id]
+
+    @product = Product.find_by_slug!(slug_pagam.downcase)
   end
 end
