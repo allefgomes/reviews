@@ -13,6 +13,8 @@ RSpec.describe Opnion, type: :model do
     it { should validate_presence_of(:rating) }
     it { should validate_presence_of(:review_text) }
     it { should validate_presence_of(:product) }
+
+    it { should validate_inclusion_of(:rating).in?(0..10) }
   end
 
   describe '#associations' do
