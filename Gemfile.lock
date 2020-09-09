@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/allefgomes/argon_rails.git
+  revision: 3ff8735e48a8d4f00c551e37c712f8e04be9a74e
+  specs:
+    argon-theme (1.0.0)
+
+GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: b194dd23bb4cf9f151e6f680e1ea243737d747e1
   branch: master
@@ -231,6 +237,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  argon-theme!
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

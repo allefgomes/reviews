@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+# It is a gem for applying argon theme to your project
+gem 'argon-theme', git: 'https://github.com/allefgomes/argon_rails.git'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

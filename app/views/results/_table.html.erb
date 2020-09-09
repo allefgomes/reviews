@@ -2,7 +2,7 @@
   <div>
     <table class="table align-items-center table-dark">
       <thead class="thead-dark">
-        <tr>
+        <tr class="text-center">
           <th scope="col">Total de Avaliações para o Produto</th>
           <th scope="col">Média Geral das Avaliações do Produto</th>
           <th scope="col">Total das Avaliações do Produto por Mês</th>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody class="list">
-        <tr>
+        <tr class="text-right">
           <td scope="col"><%= @data_to_dashboard[:count_opnions] %></td>
           <td scope="col"><%= decimal_round(@data_to_dashboard[:average_rating]) %></td>
           <td scope="col"><%= @data_to_dashboard[:count_opnions_last_3_months] %></td>
