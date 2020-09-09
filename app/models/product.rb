@@ -6,7 +6,12 @@ class Product < ApplicationRecord
 
   has_many :opnions
 
-  default_scope { joins(:opnions).includes(:opnions) }
+  default_scope { left_outer_joins(:opnions).includes(:opnions) }
+  after_validation :set_slug
+
+  def set_slug
+    self.slug = name.downcase.split(' ').join('_') unless name.nil?
+  end
 
   def data_to_dashboard
     opnions_last_tree_months = opnions
@@ -23,6 +28,10 @@ class Product < ApplicationRecord
   private
 
   def calculate_average(opnions)
-    opnions.sum { |opnion| opnion[:rating] }.to_f / opnions.length
+    result = opnions.sum { |opnion| opnion[:rating] }.to_f / opnions.length
+
+    return 0 if result.nan?
+
+    result
   end
 end

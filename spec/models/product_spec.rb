@@ -27,4 +27,24 @@ RSpec.describe Product, type: :model do
   describe '#associations' do
     it { should have_many(:opnions).class_name('Opnion') }
   end
+
+  describe '#after_validations' do
+    it '#set_slug convert name to downcase and change space to _' do
+      expect(valid_product.slug).to be_eql('simple_product')
+    end
+  end
+
+  describe '#methods' do
+    it '#data_to_dashboard returns object' do
+      Opnion.create(product: valid_product,
+                    timestamp: Time.now.getutc,
+                    rating: 10,
+                    review_text: 'Review')
+
+      expect(valid_product.data_to_dashboard[:count_opnions]).to be_eql(1)
+      expect(valid_product.data_to_dashboard[:average_rating]).to be_eql(10.0)
+      expect(valid_product.data_to_dashboard[:count_opnions_last_3_months]).to be_eql(1)
+      expect(valid_product.data_to_dashboard[:average_rating_last_3_months]).to be_eql(10.0)
+    end
+  end
 end
